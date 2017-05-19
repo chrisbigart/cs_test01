@@ -21,7 +21,7 @@ bstr_t assembly_name = "cs_test01";
 bstr_t assembly_filename = "cs_test01.dll";
 bstr_t class_name = "Program";
 bstr_t full_class_name = "cs_test01.Program";
-bstr_t function_name = "StackOverflow";
+bstr_t function_name = "StackOverflowInDifferentAppDomain";// "StackOverflow";
 
 
 
@@ -171,7 +171,7 @@ int call_clr_stack_overflow2(ICLRRuntimeHost* runtime_host) noexcept
 	__try
 		{
 
-		result = runtime_host->ExecuteInDefaultAppDomain(assembly_filename, full_class_name, L"NamedFunction", nullptr, &retval);
+		result = runtime_host->ExecuteInDefaultAppDomain(assembly_filename, full_class_name, function_name, nullptr, &retval);
 		//result = type->InvokeMember_3(function_name, (BindingFlags)(BindingFlags_InvokeMethod | BindingFlags_Static | BindingFlags_Public),
 		//	nullptr, target, nullptr, &retval);
 		}
@@ -246,9 +246,10 @@ int main(int argc, char** argv)
 	auto clr_result = call_clr_stack_overflow2(runtime_host);
 
 
-	variant_t retval;
+	//variant_t retval;
 	//auto clr_result = call_clr_stack_overflow(type, variant_t(), retval);
 
+	Sleep(3500);
 	return clr_result;
 	}
 

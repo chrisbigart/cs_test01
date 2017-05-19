@@ -44,6 +44,28 @@ namespace cs_test01
 			return StackOverflow();
 			//throw new ApplicationException();
 		}
+		public static int StackOverflowInDifferentAppDomain(string arg)
+		{
+			Console.WriteLine("StackOverflowInDifferentAppDomain() called");
+			var ret = 1234;
+			try
+			{
+				var domain = AppDomain.CreateDomain("NewDomain");
+				var tc = (TestClass)domain.CreateInstanceFromAndUnwrap("cs_test01.dll", "cs_test01.TestClass");
+
+				tc.UnloadCurrentDomain("blah");
+				ret = 2345;
+			}
+			catch(Exception ex)
+			{
+				Console.WriteLine(ex);
+				ret = 3456;
+			}
+
+			return ret;
+		}
+
+
 		public static int StackOverflow()
 		{
 			var val = 1337;
@@ -107,4 +129,20 @@ namespace cs_test01
 			Console.WriteLine(result);
         }
     }
+
+	public class TestClass : MarshalByRefObject
+	{
+		public void UnloadCurrentDomain(object state)
+		{
+			Console.WriteLine("UnloadCurrentDomain called");
+			Program.StackOverflow();
+			//Console.WriteLine("\nUnloading the current AppDomain{0}.", state);
+
+			// Unload the current application domain. This causes
+			// an AppDomainUnloadedException to be thrown.
+			//
+			//AppDomain.Unload(AppDomain.CurrentDomain);
+		}
+	}
+
 }

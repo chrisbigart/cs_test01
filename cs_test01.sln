@@ -10,6 +10,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cpp_dotnet_host", "cpp_dotn
 		{AE47839A-480E-4934-832B-170205F49077} = {AE47839A-480E-4934-832B-170205F49077}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cs_dotnet_host", "cs_dotnet_host\cs_dotnet_host.csproj", "{042AA4FE-FD1D-444E-BA54-2258CC9EF962}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,18 @@ Global
 		{C561E899-0C6E-4E62-8417-94A85AA85819}.Release|x64.Build.0 = Release|x64
 		{C561E899-0C6E-4E62-8417-94A85AA85819}.Release|x86.ActiveCfg = Release|Win32
 		{C561E899-0C6E-4E62-8417-94A85AA85819}.Release|x86.Build.0 = Release|Win32
+		{042AA4FE-FD1D-444E-BA54-2258CC9EF962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{042AA4FE-FD1D-444E-BA54-2258CC9EF962}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{042AA4FE-FD1D-444E-BA54-2258CC9EF962}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{042AA4FE-FD1D-444E-BA54-2258CC9EF962}.Debug|x64.Build.0 = Debug|Any CPU
+		{042AA4FE-FD1D-444E-BA54-2258CC9EF962}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{042AA4FE-FD1D-444E-BA54-2258CC9EF962}.Debug|x86.Build.0 = Debug|Any CPU
+		{042AA4FE-FD1D-444E-BA54-2258CC9EF962}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{042AA4FE-FD1D-444E-BA54-2258CC9EF962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{042AA4FE-FD1D-444E-BA54-2258CC9EF962}.Release|x64.ActiveCfg = Release|Any CPU
+		{042AA4FE-FD1D-444E-BA54-2258CC9EF962}.Release|x64.Build.0 = Release|Any CPU
+		{042AA4FE-FD1D-444E-BA54-2258CC9EF962}.Release|x86.ActiveCfg = Release|Any CPU
+		{042AA4FE-FD1D-444E-BA54-2258CC9EF962}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
